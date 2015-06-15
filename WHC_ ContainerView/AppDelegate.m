@@ -6,8 +6,14 @@
 //  Copyright (c) 2015年 吴海超. All rights reserved.
 //
 
-#import "AppDelegate.h"
+/*
+ *  qq:712641411
+ *  gitHub:https://github.com/netyouli
+ *  csdn:http://blog.csdn.net/windwhc/article/category/3117381
+ */
 
+#import "AppDelegate.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +23,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    UITabBarController  * tabbarVC = [[UITabBarController alloc]init];
+    ViewController         * VC1           = [[ViewController alloc] init];
+    ViewController         * VC2       = [[ViewController alloc] init];
+    VC1.tyle = 1;
+    VC2.tyle = 2;
+    UINavigationController  * NV1            = [[UINavigationController alloc] initWithRootViewController:VC1];
+    UINavigationController  * NV2        = [[UINavigationController alloc] initWithRootViewController:VC2];
+    NV1.title = @"样式一";
+    NV2.title = @"样式二";
+    NV1.tabBarItem.title = @"样式一";
+    NV2.tabBarItem.title = @"样式二";
+    
+    NV1.tabBarItem.image = [UIImage imageNamed:@"tabIcon2"];
+    NV2.tabBarItem.image = [UIImage imageNamed:@"tabIcon2"];
+    tabbarVC.viewControllers = @[NV1,NV2];
+    
+//    UINavigationController  * nvRoot = [[UINavigationController alloc]initWithRootViewController:[ViewController new]];
+    _window.rootViewController = tabbarVC;
+    [_window makeKeyAndVisible];
     return YES;
 }
 

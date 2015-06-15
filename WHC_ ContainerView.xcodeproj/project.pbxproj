@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C358916D1B26E93D00DC0B5F /* WHC_BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C358916C1B26E93D00DC0B5F /* WHC_BadgeView.m */; };
+		C3C818631B2AD50500B27B52 /* tabIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C818611B2AD50500B27B52 /* tabIcon2.png */; };
+		C3C818641B2AD50500B27B52 /* tabIcon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C818621B2AD50500B27B52 /* tabIcon2@2x.png */; };
+		C3E49B741B098CCE00782D6C /* UIView+WHC_ViewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E49B6D1B098CCE00782D6C /* UIView+WHC_ViewProperty.m */; };
+		C3E49B751B098CCE00782D6C /* WHC_ContainerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E49B6F1B098CCE00782D6C /* WHC_ContainerBar.m */; };
+		C3E49B761B098CCE00782D6C /* WHC_ContainerBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E49B711B098CCE00782D6C /* WHC_ContainerBarItem.m */; };
+		C3E49B771B098CCE00782D6C /* WHC_ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E49B731B098CCE00782D6C /* WHC_ContainerView.m */; };
+		C3E49BB61B09F03000782D6C /* oneView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E49BB51B09F03000782D6C /* oneView.m */; };
+		C3E5BB4F1B2ED87A008FF419 /* os.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3E5BB4E1B2ED87A008FF419 /* os.gif */; };
+		C3E5BB531B2ED94A008FF419 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C3E5BB521B2ED94A008FF419 /* README.md */; };
 		C3E5EDE91B05910500059C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5EDE81B05910500059C9D /* main.m */; };
 		C3E5EDEC1B05910500059C9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5EDEB1B05910500059C9D /* AppDelegate.m */; };
 		C3E5EDEF1B05910500059C9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5EDEE1B05910500059C9D /* ViewController.m */; };
-		C3E5EDF21B05910500059C9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3E5EDF01B05910500059C9D /* Main.storyboard */; };
 		C3E5EDF41B05910500059C9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E5EDF31B05910500059C9D /* Images.xcassets */; };
 		C3E5EDF71B05910500059C9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E5EDF51B05910500059C9D /* LaunchScreen.xib */; };
 		C3E5EE031B05910500059C9D /* WHC__ContainerViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5EE021B05910500059C9D /* WHC__ContainerViewTests.m */; };
@@ -27,6 +36,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C358916B1B26E93D00DC0B5F /* WHC_BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_BadgeView.h; sourceTree = "<group>"; };
+		C358916C1B26E93D00DC0B5F /* WHC_BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_BadgeView.m; sourceTree = "<group>"; };
+		C3C818611B2AD50500B27B52 /* tabIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabIcon2.png; sourceTree = "<group>"; };
+		C3C818621B2AD50500B27B52 /* tabIcon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabIcon2@2x.png"; sourceTree = "<group>"; };
+		C3E49B6C1B098CCE00782D6C /* UIView+WHC_ViewProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WHC_ViewProperty.h"; sourceTree = "<group>"; };
+		C3E49B6D1B098CCE00782D6C /* UIView+WHC_ViewProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WHC_ViewProperty.m"; sourceTree = "<group>"; };
+		C3E49B6E1B098CCE00782D6C /* WHC_ContainerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_ContainerBar.h; sourceTree = "<group>"; };
+		C3E49B6F1B098CCE00782D6C /* WHC_ContainerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_ContainerBar.m; sourceTree = "<group>"; };
+		C3E49B701B098CCE00782D6C /* WHC_ContainerBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_ContainerBarItem.h; sourceTree = "<group>"; };
+		C3E49B711B098CCE00782D6C /* WHC_ContainerBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_ContainerBarItem.m; sourceTree = "<group>"; };
+		C3E49B721B098CCE00782D6C /* WHC_ContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_ContainerView.h; sourceTree = "<group>"; };
+		C3E49B731B098CCE00782D6C /* WHC_ContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_ContainerView.m; sourceTree = "<group>"; };
+		C3E49BB41B09F03000782D6C /* oneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneView.h; sourceTree = "<group>"; };
+		C3E49BB51B09F03000782D6C /* oneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneView.m; sourceTree = "<group>"; };
+		C3E5BB4E1B2ED87A008FF419 /* os.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = os.gif; sourceTree = "<group>"; };
+		C3E5BB521B2ED94A008FF419 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C3E5EDE31B05910500059C9D /* WHC_ ContainerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WHC_ ContainerView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E5EDE71B05910500059C9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E5EDE81B05910500059C9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -34,7 +59,6 @@
 		C3E5EDEB1B05910500059C9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C3E5EDED1B05910500059C9D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C3E5EDEE1B05910500059C9D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C3E5EDF11B05910500059C9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3E5EDF31B05910500059C9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3E5EDF61B05910500059C9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C3E5EDFC1B05910500059C9D /* WHC_ ContainerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHC_ ContainerViewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,9 +84,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3C818601B2AD50500B27B52 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C3C818611B2AD50500B27B52 /* tabIcon2.png */,
+				C3C818621B2AD50500B27B52 /* tabIcon2@2x.png */,
+				C3E5BB4E1B2ED87A008FF419 /* os.gif */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		C3E49B6B1B098CCE00782D6C /* WHC_LIB */ = {
+			isa = PBXGroup;
+			children = (
+				C3E49B6C1B098CCE00782D6C /* UIView+WHC_ViewProperty.h */,
+				C3E49B6D1B098CCE00782D6C /* UIView+WHC_ViewProperty.m */,
+				C358916B1B26E93D00DC0B5F /* WHC_BadgeView.h */,
+				C358916C1B26E93D00DC0B5F /* WHC_BadgeView.m */,
+				C3E49B6E1B098CCE00782D6C /* WHC_ContainerBar.h */,
+				C3E49B6F1B098CCE00782D6C /* WHC_ContainerBar.m */,
+				C3E49B701B098CCE00782D6C /* WHC_ContainerBarItem.h */,
+				C3E49B711B098CCE00782D6C /* WHC_ContainerBarItem.m */,
+				C3E49B721B098CCE00782D6C /* WHC_ContainerView.h */,
+				C3E49B731B098CCE00782D6C /* WHC_ContainerView.m */,
+			);
+			path = WHC_LIB;
+			sourceTree = "<group>";
+		};
+		C3E49BB31B09F01600782D6C /* whcView */ = {
+			isa = PBXGroup;
+			children = (
+				C3E49BB41B09F03000782D6C /* oneView.h */,
+				C3E49BB51B09F03000782D6C /* oneView.m */,
+			);
+			path = whcView;
+			sourceTree = "<group>";
+		};
 		C3E5EDDA1B05910500059C9D = {
 			isa = PBXGroup;
 			children = (
+				C3E5BB521B2ED94A008FF419 /* README.md */,
+				C3C818601B2AD50500B27B52 /* images */,
+				C3E49B6B1B098CCE00782D6C /* WHC_LIB */,
 				C3E5EDE51B05910500059C9D /* WHC_ ContainerView */,
 				C3E5EDFF1B05910500059C9D /* WHC_ ContainerViewTests */,
 				C3E5EDE41B05910500059C9D /* Products */,
@@ -85,7 +148,7 @@
 				C3E5EDEB1B05910500059C9D /* AppDelegate.m */,
 				C3E5EDED1B05910500059C9D /* ViewController.h */,
 				C3E5EDEE1B05910500059C9D /* ViewController.m */,
-				C3E5EDF01B05910500059C9D /* Main.storyboard */,
+				C3E49BB31B09F01600782D6C /* whcView */,
 				C3E5EDF31B05910500059C9D /* Images.xcassets */,
 				C3E5EDF51B05910500059C9D /* LaunchScreen.xib */,
 				C3E5EDE61B05910500059C9D /* Supporting Files */,
@@ -199,8 +262,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3E5EDF21B05910500059C9D /* Main.storyboard in Resources */,
+				C3C818631B2AD50500B27B52 /* tabIcon2.png in Resources */,
+				C3E5BB4F1B2ED87A008FF419 /* os.gif in Resources */,
 				C3E5EDF71B05910500059C9D /* LaunchScreen.xib in Resources */,
+				C3C818641B2AD50500B27B52 /* tabIcon2@2x.png in Resources */,
 				C3E5EDF41B05910500059C9D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +285,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E5EDEF1B05910500059C9D /* ViewController.m in Sources */,
+				C3E49BB61B09F03000782D6C /* oneView.m in Sources */,
+				C3E5BB531B2ED94A008FF419 /* README.md in Sources */,
+				C3E49B771B098CCE00782D6C /* WHC_ContainerView.m in Sources */,
+				C3E49B761B098CCE00782D6C /* WHC_ContainerBarItem.m in Sources */,
+				C3E49B741B098CCE00782D6C /* UIView+WHC_ViewProperty.m in Sources */,
+				C358916D1B26E93D00DC0B5F /* WHC_BadgeView.m in Sources */,
+				C3E49B751B098CCE00782D6C /* WHC_ContainerBar.m in Sources */,
 				C3E5EDEC1B05910500059C9D /* AppDelegate.m in Sources */,
 				C3E5EDE91B05910500059C9D /* main.m in Sources */,
 			);
@@ -244,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C3E5EDF01B05910500059C9D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3E5EDF11B05910500059C9D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C3E5EDF51B05910500059C9D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -348,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WHC_ ContainerView/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "WHC_ ContainerView/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +482,7 @@
 				C3E5EE081B05910500059C9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3E5EE091B05910500059C9D /* Build configuration list for PBXNativeTarget "WHC_ ContainerViewTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +491,7 @@
 				C3E5EE0B1B05910500059C9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
