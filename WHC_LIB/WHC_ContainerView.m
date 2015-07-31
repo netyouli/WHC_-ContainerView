@@ -288,9 +288,10 @@
             [self addContentViewToContainerView];
             [UIView animateWithDuration:KWHC_ShowAnimationDuring delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
                 _editView.height = 0.0;
-            } completion:^(BOOL finished) {
                 _dropImageView.transform = CGAffineTransformMakeRotation(0);
                 [_editView removeFromSuperview];
+                
+            } completion:^(BOOL finished) {
                 _editView.frame = self.bounds;
                 if(_isClickDrop){
                     [_containerBar updateContainer];

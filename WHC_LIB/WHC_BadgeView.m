@@ -129,8 +129,8 @@
     UIBezierPath  * bezierPath = [UIBezierPath bezierPath];
     CGPoint  centerPoint = _badgeLabel.center;
     CGFloat  radius = 0.0;
-    CGFloat  startAngle = 0.0;
-    CGFloat  endAngle = 0.0;
+//    CGFloat  startAngle = 0.0;
+//    CGFloat  endAngle = 0.0;
     CGFloat  circleDistance = [self twoPointDistancePoint1:_startCenterPoint point2:centerPoint];
     radius = _radius - (circleDistance / _maxCircleDistance) * _radius;
     if(radius < 0){
@@ -170,11 +170,11 @@
         ctl1Point  = CGPointZero,
         ctl2Point  = CGPointZero;
     }
-    startAngle = asin(sinAngle) / M_PI * 180.0;
-    endAngle = M_PI - startAngle;
-    if(startAngle > 0){
-        endAngle = M_PI + startAngle;
-    }
+//    startAngle = asin(sinAngle) / M_PI * 180.0;
+//    endAngle = M_PI - startAngle;
+//    if(startAngle > 0){
+//        endAngle = M_PI + startAngle;
+//    }
     
     [bezierPath moveToPoint:aPoint];
     [bezierPath addQuadCurveToPoint:dPoint controlPoint:ctl1Point];
@@ -193,8 +193,6 @@
     CGContextAddPath(context, bezierPath.CGPath);
     CGContextDrawPath(context, kCGPathFillStroke);
     UIGraphicsEndImageContext();
-    
-    
 }
 
 - (void)handleEndDragAnimation:(CGFloat)circleDistance{

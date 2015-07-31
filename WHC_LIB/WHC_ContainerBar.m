@@ -322,7 +322,7 @@
         }
     }else if(oriX > 0){
         count = _containerBarParam.titlesArr.count;
-        i = index;
+//        i = index;
         goto WHC;
     }
 }

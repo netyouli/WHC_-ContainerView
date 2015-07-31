@@ -39,10 +39,15 @@
         [self addSubview:_tv];
         _tv.delegate = self;
         _tv.dataSource = self;
-        
+        [_tv reloadData];
     }
     return self;
 }
+
+- (NSString *)getTitle{
+    return _title;
+}
+
 - (void)reloadView{
     [_tv reloadData];
 }
@@ -59,15 +64,19 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:strCell];
         
     }
-    for (UIView * view in cell.subviews) {
+    for (NSInteger i = 0; i < cell.subviews.count; i++) {
+        UIView * view = cell.subviews[i];
         if([view isKindOfClass:[WHC_BadgeView class]]){
             [view removeFromSuperview];
+            view = nil;
         }
     }
-    cell.width = [UIScreen mainScreen].bounds.size.width;
-    CGRect  cellFrame = cell.frame;
-    badgeView = [[WHC_BadgeView alloc]initWithSuperView:cell position:CGPointMake(cellFrame.size.width - 50.0, 15.0) radius:10.0];
-    [badgeView setBadgeNumber:indexPath.row];
+    if([_title isEqualToString:@"ios"]){
+        cell.width = [UIScreen mainScreen].bounds.size.width;
+        CGRect  cellFrame = cell.frame;
+        badgeView = [[WHC_BadgeView alloc]initWithSuperView:cell position:CGPointMake(cellFrame.size.width - 50.0, 15.0) radius:10.0];
+        [badgeView setBadgeNumber:indexPath.row];
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = _title;
     return cell;

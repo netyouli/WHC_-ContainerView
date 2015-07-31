@@ -68,7 +68,12 @@
 #pragma mark - WHC_ContainerViewDelegate -
 
 - (NSArray *)whc_ContainerView:(WHC_ContainerView *)containerView updateContainerViewLayoutWithTitlesArr:(NSArray *)titlesArr{
-    [viewArr removeAllObjects];
+    for (NSInteger i = 0; i < viewArr.count;) {
+        oneView  * view = viewArr[i];
+        [view removeFromSuperview];
+        [viewArr removeObject:view];
+        view = nil;
+    }
     CGRect  containerViewRC = {0.0,64.0,self.view.width,self.view.height - 64.0};
     for (NSString * title in titlesArr) {
         oneView  * view = [[oneView alloc]initWithFrame:containerViewRC title:title];
@@ -79,6 +84,7 @@
 
 - (void)whc_ContainerView:(WHC_ContainerView *)containerView loadContentForCurrentView:(UIView *)currentView currentIndex:(NSInteger)index{
     //切换pageView的时候这里会调用来更新currentview 的内容
+//    NSLog(@"title = %@",[((oneView *)currentView) getTitle]);
     [((oneView*)currentView) reloadView];
 }
 

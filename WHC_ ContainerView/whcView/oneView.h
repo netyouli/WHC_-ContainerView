@@ -18,5 +18,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame title:(NSString*)title;
 
+- (NSString *)getTitle;
+
 - (void)reloadView;
 @end
