@@ -112,7 +112,8 @@
 
 - (void)updateContainerBarItemView{
     for (UIView * view in _containerBarItemView.subviews) {
-        if([view isKindOfClass:[WHC_ContainerBarItem class]]){
+        if([view isKindOfClass:[WHC_ContainerBarItem class]] ||
+           [view isKindOfClass:[UILabel class]]){
             [view removeFromSuperview];
         }
     }

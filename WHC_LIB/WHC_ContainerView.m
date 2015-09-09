@@ -352,6 +352,7 @@
             if(_moveBarItemIndex > -1){
                 _canMoveBarItem = YES;
                 _moveBarItem = ((WHC_ContainerBarItem*)_barItemArr[_moveBarItemIndex]);
+                _startPoint = _moveBarItem.center;
                 [_editView bringSubviewToFront:_moveBarItem];
             }
             _addItemView.hidden = YES;
@@ -538,7 +539,6 @@
         _editView.height = sf.height;
         _dropImageView.transform = CGAffineTransformMakeRotation(M_PI);
     } completion:^(BOOL finished) {
-        
     }];
 }
 
@@ -642,6 +642,9 @@
     [_editView bringSubviewToFront:barItem];
     BOOL       isDecRow = ((_barItemArr.count % KWHC_ButtonColumns != 1) ? NO : YES);
     BOOL       isAddRow = ((_addBarItemArr.count % KWHC_ButtonColumns == 0) ? YES : NO);
+    if(_addBarItemArr.count == 0){
+        isAddRow = NO;
+    }
     CGPoint    barItemCenter = CGPointMake(KWHC_ButtonMargin + barItem.width / 2.0, _addItemView.y + KWHC_ContainerBarHeight + KWHC_ContainerBarHeight - KWHC_EditButtonHeight  + KWHC_EditButtonHeight / 2.0);
     NSInteger  count = _addBarItemArr.count;
     NSInteger  remainder = count % KWHC_ButtonColumns;
@@ -649,7 +652,11 @@
     if(remainder != 0){
         [_addPointArr addObject:@[@([lastPoint[0] floatValue] + barItem.width + (KWHC_ContainerBarHeight - KWHC_EditButtonHeight) * 2.0), lastPoint[1]]];
     }else{
-        [_addPointArr addObject:@[@(KWHC_ButtonMargin + barItem.width / 2.0), @([lastPoint[1] floatValue] + barItem.height + KWHC_ButtonMargin / 2.0)]];
+        if(count == 0){
+            [_addPointArr addObject:@[@(KWHC_ButtonMargin + barItem.width / 2.0), @((barItem.height + KWHC_ButtonMargin) / 2.0)]];
+        }else{
+            [_addPointArr addObject:@[@(KWHC_ButtonMargin + barItem.width / 2.0), @([lastPoint[1] floatValue] + barItem.height + KWHC_ButtonMargin / 2.0)]];
+        }
     }
     CGFloat  incrementHeight = barItem.height + KWHC_ButtonMargin / 2.0;
     [UIView animateWithDuration:KWHC_ShowAnimationDuring animations:^{
@@ -657,8 +664,10 @@
             _addItemView.center = CGPointMake(_addItemView.center.x, _addItemView.center.y - incrementHeight);
             _addItemView.height += incrementHeight;
             _addScrollView.height += incrementHeight;
+            barItem.center = CGPointMake(barItemCenter.x, barItemCenter.y - incrementHeight);
+        }else{
+           barItem.center = barItemCenter;
         }
-        barItem.center = barItemCenter;
         for (NSInteger i = count - 1; i >= 0; i--) {
             WHC_ContainerBarItem  * tempBarItem = _addBarItemArr[i];
             NSArray  * tempBarItemPoint = _addPointArr[i + 1];

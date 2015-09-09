@@ -36,7 +36,7 @@
     CGRect  containerViewRC = {0.0,64.0,self.view.width,self.view.height - 64.0 - 50.0};
     NSArray         * titles = @[@"android",@"ios",@"wp",@"windows",@"apple",@"google",@"baidu",@"腾讯",@"纬创",@"吴海超"];
     NSMutableArray  * titlesArr = [titles mutableCopy];
-    NSArray         * laterTitlesArr =  @[@"北京",@"上海",@"深圳",@"广州",@"武汉",@"新洲",@"光谷",@"软件源",@"硬件",@"shit",@"fuck",@"北京",@"上海",@"深圳",@"广州",@"武汉",@"新洲",@"光谷",@"软件源",@"硬件",@"shit",@"fuck",@"北京",@"上海",@"深圳",@"广州",@"武汉",@"新洲",@"光谷",@"软件源",@"硬件",@"shit",@"fuck",@"北京",@"上海",@"深圳",@"广州",@"武汉",@"新洲",@"光谷",@"软件源",@"硬件",@"shit",@"fuck",@"北京",@"上海",@"深圳",@"广州",@"武汉",@"新洲",@"光谷",@"软件源",@"硬件",@"shit",@"fuck",@"北京",@"上海",@"深圳",@"广州",@"武汉",@"新洲",@"光谷",@"软件源",@"硬件",@"shit",@"fuck"];
+    NSArray         * laterTitlesArr =  @[];
     if(_tyle == 1){
         WHC_ContainerView  * containerView = [[WHC_ContainerView alloc]initWithFrame:containerViewRC param:[WHC_ContainerBarParam getWHC_ContainerViewParamWithTitles:titlesArr laterTitlesArr:[laterTitlesArr mutableCopy]]];
         containerView.delegate = self;
