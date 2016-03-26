@@ -164,10 +164,10 @@
             [_containerBarItemView addSubview:segmentLineLab];
         }
         [_containerBarItemView addSubview:barItem];
-        CGFloat radius = 8.0;
-        if(i == 0 && !_containerBarParam.visableCursor){
-            [barItem addBadgeViewWithPosition:CGPointMake((i + 1) * _barItemWidth - radius * 2.0, 0.0) radius:radius withBadgeNumber:3];
-        }
+//        CGFloat radius = 8.0;
+//        if(i == 0 && !_containerBarParam.visableCursor){
+//            [barItem addBadgeViewWithPosition:CGPointMake((i + 1) * _barItemWidth - radius * 2.0, 0.0) radius:radius withBadgeNumber:3];
+//        }
     }
     if(_containerBarParam.visableCursor){
         if(_cursorView){
@@ -199,7 +199,11 @@
         containerBarItemViewRC.origin.y = _containerBarParam.lineWidth;
         containerBarItemViewRC.size.height = self.height - _containerBarParam.lineWidth;
     }
-    containerBarItemViewRC.size.width = self.width - KWHC_DropBtn_Width;
+    if (_containerBarParam.laterTitlesArr && _containerBarParam.laterTitlesArr.count > 0) {
+        containerBarItemViewRC.size.width = self.width - KWHC_DropBtn_Width;
+    }else {
+        containerBarItemViewRC.size.width = self.width;
+    }
     _containerBarItemView = [[UIScrollView alloc]initWithFrame:containerBarItemViewRC];
     _containerBarItemView.showsHorizontalScrollIndicator = NO;
     _containerBarItemView.showsVerticalScrollIndicator = NO;
@@ -216,21 +220,23 @@
     
     [self updateContainerBarItemView];
     [self addSubview:_containerBarItemView];
-    CGFloat  dropBtnY = 0.0;
-    if(_containerBarParam.isHeaderLine){
-        dropBtnY = _containerBarParam.lineWidth;
+    if (_containerBarParam.laterTitlesArr && _containerBarParam.laterTitlesArr.count > 0) {
+        CGFloat  dropBtnY = 0.0;
+        if(_containerBarParam.isHeaderLine){
+            dropBtnY = _containerBarParam.lineWidth;
+        }
+        _dropBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _dropBtn.frame = CGRectMake(_containerBarItemView.maxX, dropBtnY, KWHC_DropBtn_Width, _containerBarItemView.height);
+        _dropBtn.backgroundColor = [UIColor colorWithWhite:230.0 / 255.0 alpha:1.0];
+        [_dropBtn addTarget:self action:@selector(clickDropBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_dropBtn];
+        
+        _dropImageView = [[UIImageView alloc]initWithFrame:_dropBtn.bounds];
+        _dropImageView.backgroundColor = [UIColor clearColor];
+        _dropImageView.contentMode = UIViewContentModeCenter;
+        _dropImageView.image = [self getDropImage];
+        [_dropBtn addSubview:_dropImageView];
     }
-    _dropBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _dropBtn.frame = CGRectMake(_containerBarItemView.maxX, dropBtnY, KWHC_DropBtn_Width, _containerBarItemView.height);
-    _dropBtn.backgroundColor = [UIColor colorWithWhite:230.0 / 255.0 alpha:1.0];
-    [_dropBtn addTarget:self action:@selector(clickDropBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_dropBtn];
-    
-    _dropImageView = [[UIImageView alloc]initWithFrame:_dropBtn.bounds];
-    _dropImageView.backgroundColor = [UIColor clearColor];
-    _dropImageView.contentMode = UIViewContentModeCenter;
-    _dropImageView.image = [self getDropImage];
-    [_dropBtn addSubview:_dropImageView];
 }
 
 - (UIImage *)getDropImage{
