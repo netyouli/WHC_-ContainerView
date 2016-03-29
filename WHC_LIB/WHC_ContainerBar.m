@@ -28,7 +28,7 @@
         NSMutableArray  * tempTitlesArr = [dict[KWHC_ContainerTitlesArrKey] mutableCopy];
         NSMutableArray  * tempLaterTitlesArr = [dict[KWHC_ContainerLaterTitlesArrKey] mutableCopy];
         
-        if(tempLaterTitlesArr.count + tempTitlesArr.count < titlesArr.count + laterTitlesArr.count){
+        if(tempLaterTitlesArr.count + tempTitlesArr.count == titlesArr.count + laterTitlesArr.count){
             NSMutableString * strTempTitles = [NSMutableString new];
             NSMutableString * strTempLatertTitles = [NSMutableString new];
             for (NSString * txt in tempTitlesArr) {
@@ -47,8 +47,15 @@
                     [tempLaterTitlesArr addObject:txt];
                 }
             }
-            [WHC_ContainerBar saveContainerBarTitlesArr:tempTitlesArr laterTitlesArr:tempLaterTitlesArr];
+        }else {
+            [tempTitlesArr removeAllObjects];
+            [tempLaterTitlesArr removeAllObjects];
+            tempTitlesArr = nil;
+            tempLaterTitlesArr = nil;
+            tempTitlesArr = titlesArr;
+            tempLaterTitlesArr = laterTitlesArr;
         }
+        [WHC_ContainerBar saveContainerBarTitlesArr:tempTitlesArr laterTitlesArr:tempLaterTitlesArr];
         param.titlesArr = [tempTitlesArr mutableCopy];
         param.laterTitlesArr = [tempLaterTitlesArr mutableCopy];
     }else{
@@ -164,10 +171,12 @@
             [_containerBarItemView addSubview:segmentLineLab];
         }
         [_containerBarItemView addSubview:barItem];
-//        CGFloat radius = 8.0;
-//        if(i == 0 && !_containerBarParam.visableCursor){
-//            [barItem addBadgeViewWithPosition:CGPointMake((i + 1) * _barItemWidth - radius * 2.0, 0.0) radius:radius withBadgeNumber:3];
-//        }
+#if 0
+        CGFloat radius = 8.0;
+        if(i == 0 && !_containerBarParam.visableCursor){
+            [barItem addBadgeViewWithPosition:CGPointMake((i + 1) * _barItemWidth - radius * 2.0, 0.0) radius:radius withBadgeNumber:3];
+        }
+#endif
     }
     if(_containerBarParam.visableCursor){
         if(_cursorView){
@@ -199,7 +208,7 @@
         containerBarItemViewRC.origin.y = _containerBarParam.lineWidth;
         containerBarItemViewRC.size.height = self.height - _containerBarParam.lineWidth;
     }
-    if (_containerBarParam.laterTitlesArr && _containerBarParam.laterTitlesArr.count > 0) {
+    if (_containerBarParam.laterTitlesArr) {
         containerBarItemViewRC.size.width = self.width - KWHC_DropBtn_Width;
     }else {
         containerBarItemViewRC.size.width = self.width;
@@ -220,7 +229,7 @@
     
     [self updateContainerBarItemView];
     [self addSubview:_containerBarItemView];
-    if (_containerBarParam.laterTitlesArr && _containerBarParam.laterTitlesArr.count > 0) {
+    if (_containerBarParam.laterTitlesArr) {
         CGFloat  dropBtnY = 0.0;
         if(_containerBarParam.isHeaderLine){
             dropBtnY = _containerBarParam.lineWidth;
@@ -329,7 +338,6 @@
         }
     }else if(oriX > 0){
         count = _containerBarParam.titlesArr.count;
-//        i = index;
         goto WHC;
     }
 }

@@ -34,7 +34,7 @@
     
     
     CGRect  containerViewRC = {0.0,64.0,self.view.width,self.view.height - 64.0 - 50.0};
-    NSArray         * titles = @[@"android",@"ios",@"wp",@"windows",@"apple",@"google",@"baidu",@"腾讯",@"纬创",@"吴海超"];
+    NSArray         * titles = @[@"android",@"ios",@"wp",@"windows",@"apple"];//,@"google",@"baidu",@"腾讯",@"纬创",@"吴海超"];
     NSMutableArray  * titlesArr = [titles mutableCopy];
     NSArray         * laterTitlesArr =  @[];
     if(_tyle == 1){
