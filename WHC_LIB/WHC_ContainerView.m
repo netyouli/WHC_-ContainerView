@@ -100,6 +100,10 @@
     [self addContentViewToContainerView];
     [self addSubview:_containerView];
     
+    if (_containerBarParam.defaultFocusItem != 0) {
+        [_containerBar updateContainerClickIndex:_containerBarParam.defaultFocusItem];
+    }
+    
 }
 
 - (UILabel *)createLable:(CGRect)frame txt:(NSString *)txt{

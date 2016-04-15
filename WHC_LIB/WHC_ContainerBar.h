@@ -64,7 +64,7 @@
 
 @property (nonatomic , strong) NSMutableArray * titlesArr;         //标题数组
 
-@property (nonatomic , strong) NSMutableArray * laterTitlesArr;    //将添加的标题数组
+@property (nonatomic , strong) NSMutableArray * laterTitlesArr;    //将要添加的标题数组
 
 @property (nonatomic , strong) NSMutableArray * viewArr;           //视图数组
 

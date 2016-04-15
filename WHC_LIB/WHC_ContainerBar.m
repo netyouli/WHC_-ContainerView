@@ -217,7 +217,7 @@
     _containerBarItemView.showsHorizontalScrollIndicator = NO;
     _containerBarItemView.showsVerticalScrollIndicator = NO;
     
-    if(_containerBarParam.isFootLine){
+    if(_containerBarParam.isFootLine) {
         _containerBarItemView.height = self.height - _containerBarParam.lineWidth;
         if(_containerBarParam.isHeaderLine){
             _containerBarItemView.height = self.height - _containerBarParam.lineWidth * 2.0;
